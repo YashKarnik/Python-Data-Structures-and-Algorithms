@@ -1,1 +1,1 @@
-# Data structures and Algorithm paraigms using python
+# Data structures and Algorithm paradigms using python
