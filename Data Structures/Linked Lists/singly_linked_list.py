@@ -3,8 +3,11 @@ class Node:
         self.data = data
         self.next = None
 
+    def __repr__(self):
+        return str(self.data)
 
 class Sll:
+    
     def __init__(self):
         self.head = Node()
 
