@@ -27,6 +27,7 @@ class Sll:
             print(curr.data, end=" ")
             curr = curr.next
         print()
+        return ''
 
     def deleteNode(self, position):
         curr = self.head
@@ -99,21 +100,18 @@ class Sll:
             else:
                 c.next = c.next.next
 
-    def hasCycle(self):
-        i = self.head
-        if(i.next == None or i == None):
-            return False
-        else:
-            j = i.next
-            while(j.next != None and j.next.next != None):
-                j = j.next.next
-                i = i.next
-                if(i == j):
-                    return True
-            return False
-
-    def findMergeNode(self, head2):
-        pass
+    def has_cycle(self):
+        hare=self.head
+        tortoise=self.head
+        while(tortoise is not None):
+            tortoise=tortoise.next
+            hare=hare.next
+            if(hare.next is not None):
+                hare=hare.next
+            else: break
+            if(hare is tortoise):
+                return hare
+        return None
 
 
 if __name__ == '__main__':
@@ -124,10 +122,7 @@ if __name__ == '__main__':
     h1.append(4)
     h1.append(5)
     h1.append(6)
-    h2 = Sll()
-    h2.append(11)
-    h2.append(22)
-    c = h2.head
-    h2.head.next.next = h1.head.next.next.next
-    h1.printList()
-    h2.printList()
+    y=h1.getNode(0)
+    x=h1.getNode(2)
+    y.next=x
+    print(h1.has_cycle())
