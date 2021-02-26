@@ -23,11 +23,11 @@ class Sll:
 
     def __repr__(self):
         curr = self.head
+        res=''
         while(curr):
-            print(curr.data, end=" ")
+            res+=str(curr.data)+' '  
             curr = curr.next
-        print()
-        return ''
+        return res
 
     def deleteNode(self, position):
         curr = self.head
@@ -90,7 +90,7 @@ class Sll:
         c = self.head
         for i in range(pos):
             c = c.next
-        return (c.data)
+        return (c)
 
     def removeDuplicatesFromSortedList(self):
         c = self.head
@@ -122,7 +122,4 @@ if __name__ == '__main__':
     h1.append(4)
     h1.append(5)
     h1.append(6)
-    y=h1.getNode(0)
-    x=h1.getNode(2)
-    y.next=x
-    print(h1.has_cycle())
+    print(h1)
